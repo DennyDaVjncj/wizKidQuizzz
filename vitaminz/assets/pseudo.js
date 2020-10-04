@@ -4,3 +4,4 @@
 
     //build out hishScores.html
     //get timer running & responding to user activity
+    //play with fontStyles, have theme
