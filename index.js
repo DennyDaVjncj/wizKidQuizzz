@@ -7,4 +7,4 @@
 //store questions inside array
 
 let WKQ=confirm("are you ready for the mental gymnastics this quiz puts one through?");
-let WKQ0=prompt("here's a primer: 'please define the nature of reality (all things being relative of course)");
+let WKQ0=prompt("here's a primer: please define the nature of reality (all things being relative of course)");
