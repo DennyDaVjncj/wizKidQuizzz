@@ -9,9 +9,15 @@ body{
 
 .container{
     display:flex;
-    justify-content:flex-start;
+    justify-content:flex-start;    
 }
+.container div{
+    left:50%;
+    top:15%;
+}
+
 .timer{
     display:flex;
     justify-content:flex-end;
+    align-items:flex-start;
 }
