@@ -6,3 +6,12 @@ COOL BACKGROUND (OCEAN,OPTICALillusion)
 body{
     background:skyblue;
 }
+
+.container{
+    display:flex;
+    justify-content:flex-start;
+}
+.timer{
+    display:flex;
+    justify-content:flex-end;
+}
