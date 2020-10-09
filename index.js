@@ -22,20 +22,28 @@ usRspns();
 
 
 //global variables
-let tQuest=[
+let tQuest=[//iterate through objct on click, store user selection for highscores.html//forEach() to loop through object of questions
     {
+        //let crrntQst=0;//increment to track user progress
+        //let=[
+        {   qstn:"lorem",
+            choices:["",],
+            answr:"i"//particular value
+
+        }
+    ]
         q1:"do you know what you've gotten yourself into?",
-        q2:"what's a covert way to communicate to fellow programmers?",
-        q3:"how long will this continue",
+        q2:"what's a covert way for communicating to fellow programmers?",
+        q3:"how long will this continue",//generates new question on evry clckEvnt
     },
     {
-        a1:"doesn't seem like it",
+        a1:"doesn't seem like it",//mult choice?
         a2:"with the console",
         a3:"only time will tell"
     }
 ];//object for questions & answers//node of dynamic choices.//attach clickEvent so qstn changes after each selection, & available time is effected poitively or negatively.
 console.log(tQuest.q1);
 
-let trgtDiv=document.$("#firstDiv");//inject content to html
+let DOM=$("#firstDiv");//inject content to html
 // trgtDiv.html()//perhaps a mutable value, changing questions.
  
