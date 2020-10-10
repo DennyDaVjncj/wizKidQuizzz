@@ -41,9 +41,6 @@ let wizQuests=[
     "Honestly, are you willing to answer the previous question truthfully?"
 ];
 
-let wizAnswrs=[
-    {a:'a'."some fly shit"}
-]
 
 
 
