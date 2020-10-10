@@ -2,30 +2,34 @@
 //call variable within function, modularizing functionality
 //user must start quiz by clicking start exam//on-click into function where timer is started//logic programmed where time is decremented or incremented//function into with on click event, target button to do so
 
-let WKQ=confirm("are you ready for the mental gymnastics this quiz puts one through?");//I want to create a fun, enlightning experience.
-let WKQ0=prompt("here's a primer: please define the nature of reality (all things being relative of course)");
+let WKQ = confirm("are you ready for the mental gymnastics this quiz puts one through?");//I want to create a fun, enlightning experience.
+let WKQ0 = prompt("here's a primer: please define the nature of reality (all things being relative of course)");
+if (WKQ0.length <= 4) {
+    alert("You didn't even try though");
+}
 let i;//engine
-let startQuiz=$("#startQuiz");//tartgeted <button>
-let secondsLeft=5;
-let hourGlass=$("displayTime");
-
-
+let secondsLeft = 5;
+let startQuiz = document.querySelector("#startQuiz");//tartgeted <button>
+let hourGlass = document.querySelector("#displayTime");
+let timer;
 //function to kick off quiz/timer
-startQuiz.on("click",(e)=>{
-    //start timer
-    //logic for right/wrong response
-    let timer=0;
-        timer=setInterval(()=>{
+function countDown() {
+    hourGlass.textContent = secondsLeft + " seconds left";
+    timer = setInterval(function () {
         secondsLeft--;
-        hourGlass.text(secondsLeft+" only a few seconds left");
-        console.log(e);
+        hourGlass.textContent = secondsLeft + " seconds left";
+        console.log(secondsLeft);
 
-        if(secondsLeft===0){
-            clearInterval(timerInterval);
+        if (secondsLeft <= 0) {
+            clearInterval(timer);//also need to clear when last ? is answered
             sendMessage();
         }
-    },1000);
-    
+    }, 1000);
+}
+startQuiz.addEventListener("click", function () {
+    //start timer
+    //logic for right/wrong response
+    countDown();
 })
 
 //this function will serve to print dynamically to page
@@ -33,7 +37,7 @@ startQuiz.on("click",(e)=>{
 //choice nodes are updated on clicks
 //radio <buttons> for user to select from
 //hover dynamo
-let wizQuests=[
+let wizQuests = [
     "Where do babies come from, be as technical as possible, just try not to be crude (my gosh)!",
     "Where did JS come from?",
     "How much can be done with just JS?",
@@ -111,4 +115,4 @@ let wizQuests=[
 // }
 
 
- 
+
