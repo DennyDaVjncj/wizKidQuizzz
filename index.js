@@ -38,12 +38,44 @@ startQuiz.addEventListener("click", function () {
 //radio <buttons> for user to select from
 //hover dynamo
 let wizQuests = [
-    "Where do babies come from, be as technical as possible, just try not to be crude (my gosh)!",
-    "Where did JS come from?",
-    "How much can be done with just JS?",
-    "Do you think that Joe Biden or Trump have multiple versioins of themselves walking around?",
-    "Honestly, are you willing to answer the previous question truthfully?"
+    {
+        quest: "Where do babies come from, be as technical as possible, just try not to be crude (my gosh)!",
+        answers: [
+            'one', 'two', 'three'
+        ],
+        correctIndex: 0
+    },
+    {
+        quest:"How much can be done with just JS?",
+        answers:[
+            'one', 'two', 'three'
+        ],
+        correctIndex:1
+    },
+    {
+        quest:"How much can be done with just JS?",
+        answers:[
+            'one', 'two', 'three'
+        ],
+        correctIndex:1
+    },
+    {
+        quest:"How much can be done with just JS?",
+        answers:[
+            'one', 'two', 'three'
+        ],
+        correctIndex:1
+    }    
 ];
+
+function dynQuest(){
+    wizQuests[i].quest;
+    //update content using id's
+    //add click events to buttons
+    //inside event listen:evaluate user response
+        //increment index
+    //ensure that user response mathces correct index property
+}
 
 
 
