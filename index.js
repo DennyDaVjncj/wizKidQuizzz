@@ -7,13 +7,13 @@ let WKQ0 = prompt("Here's a primer: Please define the nature of reality (all thi
 if (WKQ0.length <= 4) {
     alert("You didn't even try though!");
 }
-let i;//engine
+let i;//incrementing value to 
 let secondsLeft = 5;
 let startQuiz = document.querySelector("#startQuiz");//tartgeted <button>
-let hourGlass = document.querySelector("#displayTime");
+let hourGlass = document.querySelector("#displayTime");//div elmnt displaying counter
 let timer;
 //function to kick off quiz/timer
-function countDown() {
+function timeTrggr() {
     hourGlass.textContent = secondsLeft + " seconds left";
     timer = setInterval(function () {
         secondsLeft--;
@@ -22,21 +22,16 @@ function countDown() {
 
         if (secondsLeft <= 0) {
             clearInterval(timer);//also need to clear when last ? is answered
-            sendMessage();
+            // sendMessage();
         }
     }, 1000);
 }
-startQuiz.addEventListener("click", function () {
-    //start timer
-    //logic for right/wrong response
-    countDown();
+
+//timer-trigger (pew pew!)
+startQuiz.addEventListener("click", function () {    
+    timeTrggr();
 })
 
-//this function will serve to print dynamically to page
-//question nodes are manipulated on clicks
-//choice nodes are updated on clicks
-//radio <buttons> for user to select from
-//hover dynamo
 let wizQuests = [
     {
         quest: "Where do babies come from, be as technical as possible, just try not to be crude (my gosh)!",
@@ -68,15 +63,36 @@ let wizQuests = [
     }    
 ];
 
-function dynQuest(){
-    wizQuests[i].quest;
-    //update content using id's
-    //add click events to buttons
-    //inside event listen:evaluate user response
-        //increment index
-    //ensure that user response mathces correct index property
-}
+let questNode;//cluster of questions
+let answersNode;//cluster of answers
+let h3DOM=document.querySelector("#dynQuest");//<h3> client side
+let bttnDOM=document.querySelector("c1");
+let bttnDOM0=document.querySelector("c2");
+let bttnDOM1=document.querySelector("c3");
 
+function dynQuest(){
+    questNode=wizQuests[i].quest;//qstn node
+    answersNode=wizQuests[i].answers;//answers node
+    questNode.h3DOM.textContent;
+    
+    answersNode.bttnDOM0.textContent;
+    answersNode.bttnDOM1.textContent;    
+}
+dynQuest();
+//triggering click events
+bttnDOM.addEventListener("click",function(){
+    answersNode.bttnDOM.textContent;
+    console.log(textContent);
+})
+
+//this function will serve to print dynamically to page
+//question nodes are manipulated on clicks
+//choice nodes are updated on clicks
+//update content using id's
+//add click events to buttons
+//inside event listen:evaluate user response
+    //increment index
+//ensure that user response mathces correct index property
 
 
 
