@@ -1,2 +1,4 @@
 # wizKidQuizzz
-ever heard of mental gymnastics, mental hula-hoops... well, here it is. 
+ever heard of mental gymnastics, mental hula-hoops... well, here it is
+
+deployed app:https://dennydavjncj.github.io/wizKidQuizzz/
