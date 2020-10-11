@@ -2,17 +2,23 @@
 //call variable within function, modularizing functionality
 //user must start quiz by clicking start exam//on-click into function where timer is started//logic programmed where time is decremented or incremented//function into with on click event, target button to do so
 
+//"it's only entertainment!" (Jay-Z voice)
+//fun prompt/confirm to engage user lightly
 let WKQ = confirm("Are you ready for the mental gymnastics this quiz puts one through?");//I want to create a fun, enlightning experience.
 let WKQ0 = prompt("Here's a primer: Please define the nature of reality (all things being relative of course)");
+
+//teasing user a little bit, checking they type a little something
 if (WKQ0.length <= 4) {
     alert("You didn't even try though!");
 }
-let i;//incrementing value to 
-let secondsLeft = 5;
-let startQuiz = document.querySelector("#startQuiz");//tartgeted <button>
-let hourGlass = document.querySelector("#displayTime");//div elmnt displaying counter
-let timer;
-//function to kick off quiz/timer
+
+let i=0;//increments through wizQuests 
+let secondsLeft = 5;//dynamic timer
+let startQuiz = document.querySelector("#startQuiz");//tartgeted <button> trggrng timer
+let hourGlass = document.querySelector("#displayTime");//div elmnt displaying timeDigits
+let timer;//programmatic timer
+
+//function/clckEvnt to kick off quiz/timer
 function timeTrggr() {
     hourGlass.textContent = secondsLeft + " seconds left";
     timer = setInterval(function () {
@@ -20,60 +26,58 @@ function timeTrggr() {
         hourGlass.textContent = secondsLeft + " seconds left";
         console.log(secondsLeft);
 
-        if (secondsLeft <= 0) {
+        if (secondsLeft<=0||i>=4){
             clearInterval(timer);//also need to clear when last ? is answered
-            // sendMessage();
+            //sendMessage();
         }
     }, 1000);
 }
+//timeTrggr() being triggered via user click (pew pew!)
+startQuiz.addEventListener("click",timeTrggr)
 
-//timer-trigger (pew pew!)
-startQuiz.addEventListener("click", function () {    
-    timeTrggr();
-})
-
+//object of questions to dynamically be printed as user progresses through qstns
 let wizQuests = [
     {
-        quest: "Where do babies come from, be as technical as possible, just try not to be crude (my gosh)!",
+        quest: "What's required in creating a globally used language like Javascript?",
         answers: [
-            'one', 'two', 'three'
+            '1', '2', '3'
         ],
-        correctIndex: 0
+        correctIndex:0
     },
     {
-        quest:"How much can be done with just JS?",
+        quest:"Is it Javascript that creates amazingly dynamic interfaces, or is it you that creates those interfaces?",
         answers:[
-            'one', 'two', 'three'
+            '1', '2', '3'
         ],
         correctIndex:1
     },
     {
-        quest:"How much can be done with just JS?",
+        quest:"Do you know how to create dynamic web apps without using JS?",
         answers:[
-            'one', 'two', 'three'
+            '1', '2', '3'
         ],
-        correctIndex:1
+        correctIndex:2
     },
     {
-        quest:"How much can be done with just JS?",
+        quest:"What is the correct-index for this question property?",
         answers:[
             'one', 'two', 'three'
         ],
-        correctIndex:1
+        correctIndex:-1
     }    
 ];
 
-let questNode;//cluster of questions
-let answersNode;//cluster of answers
+let questNode;//object of questions
+let answersNode;//collection of answers
 let h3DOM=document.querySelector("#dynQuest");//<h3> client side
-let bttnDOM=document.querySelector("c1");
-let bttnDOM0=document.querySelector("c2");
-let bttnDOM1=document.querySelector("c3");
+let bttnDOM=document.querySelector("#c1");
+let bttnDOM0=document.querySelector("#c2");
+let bttnDOM1=document.querySelector("#c3");
 
 function dynQuest(){
     questNode=wizQuests[i].quest;//qstn node
     answersNode=wizQuests[i].answers;//answers node
-    questNode.h3DOM.textContent;
+    questNode.h3DOM.textContent;//trying to dynamically print to empty div by id
     
     answersNode.bttnDOM0.textContent;
     answersNode.bttnDOM1.textContent;    
