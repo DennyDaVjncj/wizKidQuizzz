@@ -2,10 +2,10 @@
 //call variable within function, modularizing functionality
 //user must start quiz by clicking start exam//on-click into function where timer is started//logic programmed where time is decremented or incremented//function into with on click event, target button to do so
 
-let WKQ = confirm("are you ready for the mental gymnastics this quiz puts one through?");//I want to create a fun, enlightning experience.
-let WKQ0 = prompt("here's a primer: please define the nature of reality (all things being relative of course)");
+let WKQ = confirm("Are you ready for the mental gymnastics this quiz puts one through?");//I want to create a fun, enlightning experience.
+let WKQ0 = prompt("Here's a primer: Please define the nature of reality (all things being relative of course)");
 if (WKQ0.length <= 4) {
-    alert("You didn't even try though");
+    alert("You didn't even try though!");
 }
 let i;//engine
 let secondsLeft = 5;
