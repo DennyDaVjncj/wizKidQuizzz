@@ -12,30 +12,11 @@ if (WKQ0.length <= 4) {
     alert("You didn't even try though!");
 }
 
-let i=0;//increments through wizQuests 
-let secondsLeft = 5;//dynamic timer
+let i=0;//increments through wizQuests
+let secondsLeft = 13;//dynamic timer, restartd for every question
 let startQuiz = document.querySelector("#startQuiz");//tartgeted <button> trggrng timer
 let hourGlass = document.querySelector("#displayTime");//div elmnt displaying timeDigits
 let timer;//programmatic timer
-
-//function/clckEvnt to kick off quiz/timer
-function timeTrggr() {
-    hourGlass.textContent = secondsLeft + " seconds left";
-    timer = setInterval(function () {
-        secondsLeft--;
-        hourGlass.textContent = secondsLeft + " seconds left";
-        console.log(secondsLeft);
-
-        if (secondsLeft<=0||i>=4){
-            clearInterval(timer);//also need to clear when last ? is answered
-            //sendMessage();
-        }
-    }, 1000);
-}
-//timeTrggr() being triggered via user click (pew pew!)
-startQuiz.addEventListener("click",timeTrggr)
-
-//object of questions to dynamically be printed as user progresses through qstns
 let wizQuests = [
     {
         quest: "What's required in creating a globally used language like Javascript?",
@@ -67,27 +48,49 @@ let wizQuests = [
     }    
 ];
 
+//function/clckEvnt to kick off quiz/timer, generate first quest/choices
+function timeQuestTrggr() {
+    hourGlass.textContent = secondsLeft + " seconds left";
+    timer = setInterval(function () {
+        secondsLeft--;
+        hourGlass.textContent = secondsLeft + " seconds left";
+        console.log(secondsLeft);
+
+        if (secondsLeft<=0||i>=4){
+            clearInterval(timer);//also need to clear when last ? is answered
+            //sendMessage();
+        }
+    }, 1000);
+
+    wizQuests.forEach(dynQuest);//prints content as user progresses through quiz
+}
+startQuiz.addEventListener("click",timeQuestTrggr)//timeTrggr() being triggered via user click (pew pew!)
+
+
+//object of questions to dynamically be printed as user progresses through qstns
+
 let questNode;//object of questions
 let answersNode;//collection of answers
 let h3DOM=document.querySelector("#dynQuest");//<h3> client side
+
+//button elements
+let userChoice=document.querySelector("#userChoice");
 let bttnDOM=document.querySelector("#c1");
 let bttnDOM0=document.querySelector("#c2");
 let bttnDOM1=document.querySelector("#c3");
 
 function dynQuest(){
-    questNode=wizQuests[i].quest;//qstn node
-    answersNode=wizQuests[i].answers;//answers node
-    questNode.h3DOM.textContent;//trying to dynamically print to empty div by id
-    
-    answersNode.bttnDOM0.textContent;
-    answersNode.bttnDOM1.textContent;    
+      h3DOM.textContent=wizQuests.quest;
+      h3DOM.appendChild() 
+      console.log(h3DOM);
 }
-dynQuest();
+
+
 //triggering click events
-bttnDOM.addEventListener("click",function(){
-    answersNode.bttnDOM.textContent;
-    console.log(textContent);
-})
+// bttnDOM.addEventListener("click",function(){
+//     answersNode.bttnDOM.textContent;
+//     console.log(textContent);
+// })
 
 //this function will serve to print dynamically to page
 //question nodes are manipulated on clicks
