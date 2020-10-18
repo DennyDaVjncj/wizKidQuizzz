@@ -81,8 +81,7 @@ let bttnDOM1=document.querySelector("#c3");
 
 function dynQuest(){
       h3DOM.textContent=wizQuests.quest;
-      h3DOM.appendChild() 
-      console.log(h3DOM);
+      h3DOM.append("why can't I figure this out?");      
 }
 
 

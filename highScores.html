@@ -8,24 +8,22 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>performance tracker</title>
 </head>
-<!-- 
-    <a> back button, links to index.html
-    address positioning of elements
- -->
 
 <body>
-    <div class="container">
+    <!-- button of some sort linking back to homepage -->
+    <div class="container jumbotron">
         <header class="row">
             <h1 class="col-12">
                 high-scores from best down to worst
             </h1>
         </header>
-        <button id="startQuiz">
-            Lets dive deep!
+        <button id="backHome">
+            back to homepage
         </button>
     </div>
-</body>
 
+    <div id="newScores"></div><!--divs are to dynamically populate with each completed quiz, building list of scores-->
+</body>
 </html>
 <script>
     
