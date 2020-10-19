@@ -13,65 +13,55 @@ if (WKQ0.length <= 4) {
 }
 
 let i=0;//increments through wizQuests
-let secondsLeft = 13;//dynamic timer, restartd for every question
+let secondsLeft = 9;//dynamic timer, restartd for every question
 let startQuiz = document.querySelector("#startQuiz");//tartgeted <button> trggrng timer
 let hourGlass = document.querySelector("#displayTime");//div elmnt displaying timeDigits
 let timer;//programmatic timer
 let wizQuests = [
     {
-        quest: "What's required in creating a globally used language like Javascript?",
+        quest:"What's required in creating a globally used language like Javascript?",
         answers: [
-            '1', '2', '3'
+            'tons of dilligent practice/dedication', 'lackadaisical effort','some practice'
         ],
         correctIndex:0
     },
     {
         quest:"Is it Javascript that creates amazingly dynamic interfaces, or is it you that creates those interfaces?",
         answers:[
-            '1', '2', '3'
+            'technically Javascript creates them','Its all me!', 'philosophical considerations are beyond the scope of this assignment'
         ],
         correctIndex:1
     },
     {
-        quest:"Do you know how to create dynamic web apps without using JS?",
+        quest:"is it possible to create dynamic interfaces without the use of Js?",
         answers:[
-            '1', '2', '3'
+            'at this point, I doubt I can get anything done with or without JS', 'I do not think so', 'absolutely'
         ],
         correctIndex:2
-    },
-    {
-        quest:"What is the correct-index for this question property?",
-        answers:[
-            'one', 'two', 'three'
-        ],
-        correctIndex:-1
-    }    
+    }        
 ];
 
 //function/clckEvnt to kick off quiz/timer, generate first quest/choices
-function timeQuestTrggr() {
+function timedQuestTrggr() {
     hourGlass.textContent = secondsLeft + " seconds left";
     timer = setInterval(function () {
         secondsLeft--;
-        hourGlass.textContent = secondsLeft + " seconds left";
-        console.log(secondsLeft);
-
-        if (secondsLeft<=0||i>=4){
+        hourGlass.textContent = secondsLeft + " seconds left";     
+        if (secondsLeft<=0||i>=3){
             clearInterval(timer);//also need to clear when last ? is answered
             //sendMessage();
         }
     }, 1000);
 
     wizQuests.forEach(dynQuest);//prints content as user progresses through quiz
-}
-startQuiz.addEventListener("click",timeQuestTrggr)//timeTrggr() being triggered via user click (pew pew!)
+}startQuiz.addEventListener("click",timedQuestTrggr)//timeTrggr() being triggered via user click (pew pew!)
 
 
 //object of questions to dynamically be printed as user progresses through qstns
 
 let questNode;//object of questions
 let answersNode;//collection of answers
-let h3DOM=document.querySelector("#dynQuest");//<h3> client side
+let questDOM=document.querySelector("#dynQuest");//<h3> client side
 
 //button elements
 let userChoice=document.querySelector("#userChoice");
@@ -80,8 +70,8 @@ let bttnDOM0=document.querySelector("#c2");
 let bttnDOM1=document.querySelector("#c3");
 
 function dynQuest(){
-      h3DOM.textContent=wizQuests.quest;
-      h3DOM.append("why can't I figure this out?");      
+      questDOM.textContent=wizQuests.quest;
+      questDOM.append(wizQuests[i]);      
 }
 
 
